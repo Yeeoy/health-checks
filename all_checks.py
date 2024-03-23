@@ -3,6 +3,7 @@ import os.path
 import shutil
 import sys
 import socket
+
 def check_reboot():
     """Returns True if the computer has a pending reboot."""
     return os.path.exists("/run/reboot-required")
@@ -25,7 +26,7 @@ def check_root_full():
 def check_no_network():
     """Returns True if it fails to resolve Google's URL, False otherwise"""
     try:
-        socket.gethostbyname("www.google.com")
+        socket.gethostbyname("www.apple.com")
         return False
     except:
         return True
